@@ -1,0 +1,3 @@
+@model Order
+@{ViewData["Title"]="Order placed";}
+<div class="container success"><div class="success-mark">✓</div><div class="eyebrow">THANK YOU FOR SHOPPING NOVA</div><h1>It's officially <em>yours.</em></h1><p>Your order has been placed successfully. This is a demonstration store, so no real shipment or payment will occur.</p><div class="success-card"><span>ORDER REFERENCE</span><h2>@Model.Id</h2><div><span>Customer</span><b>@Model.Customer.FullName</b></div><div><span>Order total</span><b>$@Model.Total.ToString("0.00")</b></div><div><span>Status</span><b>@Model.Status</b></div></div><a class="btn btn-dark" asp-controller="Shop" asp-action="Index">Keep exploring ↗</a></div>

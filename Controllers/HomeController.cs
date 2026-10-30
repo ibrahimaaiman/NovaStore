@@ -1,0 +1,2 @@
+using Microsoft.AspNetCore.Mvc;using NovaStore.Services;
+namespace NovaStore.Controllers;public class HomeController(StoreService store):Controller {public IActionResult Index(){ViewBag.Featured=store.Products().Where(x=>x.Featured).ToList();ViewBag.New=store.Products().Take(8).ToList();return View();}public IActionResult Error()=>View();}
