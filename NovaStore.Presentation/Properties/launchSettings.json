@@ -1,1 +1,21 @@
-{"profiles":{"NovaStore":{"commandName":"Project","launchBrowser":true,"applicationUrl":"http://localhost:5188","environmentVariables":{"ASPNETCORE_ENVIRONMENT":"Development"}}}}
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "NovaStore.Presentation": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5188",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "NovaStore.Presentation (HTTPS)": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:7188",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
