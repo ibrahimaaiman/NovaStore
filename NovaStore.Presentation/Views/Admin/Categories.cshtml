@@ -1,0 +1,13 @@
+@model List<Category>
+@{ ViewData["Title"] = "Manage categories"; var products = (List<Product>)ViewBag.Products; }
+<div class="container admin-page">
+    <div class="section-heading"><div><div class="eyebrow">STORE MANAGEMENT</div><h1>Manage <em>categories.</em></h1></div><a class="text-link" asp-action="Index">← Dashboard</a></div>
+    @if (TempData["CategoryError"] is string error) { <p class="validation">@error</p> }
+    <form asp-action="AddCategory" method="post" class="checkout-form"><h2>Add category</h2><div class="form-grid"><label>Name<input name="Name" maxlength="80" required/></label><label>Description<input name="Description" maxlength="300"/></label></div><button class="btn btn-dark">Add category ↗</button></form>
+    <h2>Categories</h2>
+    <div class="table-wrap"><table class="admin-table"><thead><tr><th>Name</th><th>Products</th><th>Update</th><th>Delete</th></tr></thead><tbody>
+    @foreach (var category in Model) { var count = products.Count(p => p.Category.Equals(category.Name, StringComparison.OrdinalIgnoreCase));
+        <tr><td><form asp-action="EditCategory" method="post" class="inline"><input type="hidden" name="Id" value="@category.Id"/><input name="Name" value="@category.Name" maxlength="80" required/><input name="Description" value="@category.Description" maxlength="300"/><button>Save</button></form></td><td>@count</td><td>Rename updates associated products.</td><td><form asp-action="DeleteCategory" method="post" class="inline"><input type="hidden" name="id" value="@category.Id"/><button disabled="@(count > 0)">Delete</button></form></td></tr>
+    }
+    </tbody></table></div>
+</div>

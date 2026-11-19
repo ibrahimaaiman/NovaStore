@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="NovaStore.csproj" />
+  <Project Path="NovaStore.Presentation\NovaStore.Presentation.csproj" />
+  <Project Path="NovaStore.BusinessLogic\NovaStore.BusinessLogic.csproj" />
+  <Project Path="NovaStore.DataAccess\NovaStore.DataAccess.csproj" />
 </Solution>
